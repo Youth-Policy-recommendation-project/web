@@ -1,0 +1,83 @@
+.App {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .menu {
+  margin-left: auto;
+}
+
+.header .menu .link {
+  margin-left: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table td {
+  width: 25%;
+  border: 1px solid rgb(216, 207, 207);
+  text-align: center;
+  font-size: 18px;
+}
+
+table td:first-child {
+  width: 10%;
+}
+
+button {
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: #fff;
+  background-color: rgb(235, 127, 26);
+}
+
+.input_area {
+  margin-bottom: 10px;
+}
+
+/* 스타일링 클래스 */
+/* .centeredContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; 원하는 높이로 조절하세요 */
+
+/* 버튼 */
+.stackButton {
+  margin-top:16px; 
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.field .inputField {
+  margin-left: auto;
+}
+
+.text {
+  margin-left: 10px;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.title {
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
