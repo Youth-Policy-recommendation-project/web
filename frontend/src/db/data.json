@@ -1,22 +1,30 @@
 {
   "items": [
     {
-      "id": 6,
-      "task": "수업듣기",
-      "due": "20220901",
-      "status": "done"
+      "id": 1,
+      "polyBizSjnm": "춘천시 청년농업인 영농정착 지원",
+      "polyItcnCn": "20220901",
+      "age_min": 20,
+      "age_max": 30,
+      "status": "true",
+      "location": "춘천시",
+      "job_interest": ["IT", "디자인"],
+      "housing_interest": ["월세", "아파트"],
+      "welfare_program": "주거지원",
+      "employment_status": "취업중"
     },
     {
-      "id": 7,
-      "task": "밥먹기",
-      "due": "20220101",
-      "status": "todo"
-    },
-    {
-      "id": 8,
-      "task": "자기",
-      "due": "20220301",
-      "status": "todo"
+      "id": 2,
+      "polyBizSjnm": "진로상담",
+      "polyItcnCn": "20230115",
+      "age_min": 25,
+      "age_max": 35,
+      "status": "false",
+      "location": "부산광역시",
+      "job_interest": ["교육", "상담"],
+      "housing_interest": ["전세", "원룸"],
+      "welfare_program": "취업지원",
+      "employment_status": "구직중"
     }
   ]
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-export default function Result() {
+export default function MemberResult() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
 

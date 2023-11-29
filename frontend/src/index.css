@@ -1,12 +1,79 @@
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+ 
+ @font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+ }
+ 
+ @font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 300;
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+ }
+ 
+ .nanumbarungothic * {
+  font-family: 'NanumBarunGothic', sans-serif;
+ }
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'EASTARJET-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'JalnanGothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LINESeedKR-Bd';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 .App {
-  width: 600px;
+  width: auto;
   margin: 0 auto;
 }
 
+
 .header {
+  font-family: 'JalnanGothic';
+ 
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 30px;
+  width: 1200px;
+}
+
+.left {
+  margin-right: auto;
 }
 
 .header .menu {
@@ -32,40 +99,23 @@ table td:first-child {
   width: 10%;
 }
 
-button {
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 12px;
-  color: #fff;
-  background-color: rgb(235, 127, 26);
-}
-
 .input_area {
   margin-bottom: 10px;
 }
 
-/* 스타일링 클래스 */
-/* .centeredContainer {
+/* 버튼 */
+.stackForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* height: 100vh; 원하는 높이로 조절하세요 */
 
-/* 버튼 */
-.stackButton {
   margin-top:16px; 
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
   justify-content: center
 }
 
 .field {
-  display: flex;
   align-items: center;
-  justify-content: flex-end;
   margin-bottom: 20px;
 }
 
@@ -79,5 +129,645 @@ button {
 }
 
 .title {
+  font-family: 'LINESeedKR-Bd';
   white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.formField {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.component{
+  width: 800px;
+  margin: 0 auto;
+}
+
+.container1 {
+  /* 자식 요소(.child)를 중앙 정렬하기 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.infoContainer {
+  /* 자식 요소(.child)를 중앙 정렬하기 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
+}
+/* 
+/* .resultbox1 {
+  font-family: 'LINESeedKR-Bd';
+  position:relative;
+  height:200px;
+
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  height: auto; 
+  /* border: 1px solid rgb(169, 168, 205);  */
+  margin-bottom: 30px;
+  border-radius: 2em;
+  box-sizing: border-box; /* 테두리를 포함한 전체 요소의 크기를 지정 */
+  background-color: rgba(169, 168, 205, 0.2); /* 배경색을 지정 (여기서는 투명도 조절 가능) */
+
+ */ */
+
+
+
+.contentBox__item{
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-25px;
+  margin-left:-50px;
+  width:80px;
+  height:50px;
+
+}
+
+
+.resulttext {
+  font-family: 'LINESeedKR-Bd';
+
+  font-size: 30px;
+  font-weight: 600;
+  color: #262626;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 60px;
+  
+}
+.resultpolicy {
+  font-family: 'LINESeedKR-Bd';
+
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.login:hover {
+  background-color: #e0e0e0; /* 호버 시 적용될 배경색 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 (선택 사항) */
+  border-radius: 5px; /* 둥근 테두리의 반지름 크기를 조절합니다. */
+  
+
+}
+.login-container {
+  position: relative;
+}
+
+.login {
+  position: static;
+  top: 50%;
+  transform: translateY(20%);
+  right: 15px; /* Adjust this value to control the distance from the right edge */
+}
+
+.loginPage{
+  font-family: 'LINESeedKR-Bd';
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+ 
+  padding: 0 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #F7F7F7;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.titleWrap {
+  font-family: 'LINESeedKR-Bd';
+
+  margin-top: 87px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #262626;
+}
+
+.contentWrap {
+  margin-top: 26px;
+  flex: 1;
+}
+
+.inputTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #262626;
+  margin-top: 25px;
+  
+}
+
+.alignInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 33px;
+}
+
+
+.inputdisable {
+  width: 400px;
+  padding: 10px;
+  margin-top: 8px;
+  background-color: #acaad650;
+  border: 1px solid #dadada; /* You can adjust the border color */
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px; /* Adjust the font size */
+  font-weight: 400;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+
+.input {
+  width: 400px;
+  padding: 10px;
+  margin-top: 8px;
+  background-color: white;
+  border: 1px solid #dadada; /* You can adjust the border color */
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px; /* Adjust the font size */
+  font-weight: 400;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.input:focus-within{
+  border: 1px solid #7a77c6;
+  box-sizing: border-box;
+}
+
+
+
+.input::placeholder {
+  font-family: 'Pretendard-Regular';
+  color: #dadada;
+}
+
+.errorMessageWrap {
+  margin-top: 8px;
+  color: #ef0000;
+  font-size: 12px;
+
+}
+
+.loginButton:disabled {
+  background-color: #dadada;
+  color: white;
+}
+
+.policyClick{
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  text-align: center;
+}
+
+.policyClick:hover{
+  background-color: #e0e0e0; /* 호버 시 적용될 배경색 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 (선택 사항) */
+  border-radius: 5px; /* 둥근 테두리의 반지름 크기를 조절합니다. */
+  font-weight: 700;
+}
+
+.centeredContainer {
+  margin-top: 2%;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  text-align: center;
+  height: 100%; /* 부모 요소의 높이를 100%로 설정하여 수직 가운데 정렬을 적용합니다. */
+}
+
+
+.titleFont {
+  font-family: 'LINESeedKR-Bd';
+
+}
+
+.buttonFont{
+  font-family: 'LINESeedKR-Bd';
+  margin-top: 30px;
+}
+
+.formFont {
+  font-family: 'Pretendard-Regular';
+
+}
+
+.ageinput {
+  height: 38.21px;
+}
+
+
+.headerTitle {
+  font-family: 'JalnanGothic';
+  font-size: 55px;
+  text-align: center; /* Add this line to center the text horizontally */
+  align-items: center;
+
+  margin-top: 100px;
+}
+
+/* Add these styles to highlight the text in different colors */
+.highlight {
+  color: #7a77c6;
+}
+
+
+
+  /* 여기에 CSS 코드를 작성하세요 */
+  .infoUl {
+    list-style-type: none; /* 기본 목록 스타일 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    margin: 0; /* 기본 마진 제거 */
+    margin-bottom: 30px;
+  }
+
+  .infoli {
+    background-color: #f0f0f0; /* 배경색 설정 */
+    margin-bottom: 5px; /* 아래쪽 마진 설정 */
+    padding: 10px; /* 패딩 설정 */
+    border: 1px solid #ddd; /* 테두리 설정 */
+  }
+
+.normalFont {
+  font-family: 'Pretendard-Regular';
+}
+
+.alignButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 33px;
+}
+.mainButton{
+  font-family: 'LINESeedKR-Bd';
+  width: 400px;
+  height: 48px;
+  border: none;
+  font-weight: 700;
+  background-color: #1c13c6;
+  border-radius: 64px;
+  margin-bottom: 50px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.mainButton:hover{
+  background-color: white;
+  color: #1c13c6;
+  border: 1px solid #1c13c6; /* 테두리 설정 */
+
+}
+
+
+.goBackButton {
+  position: fixed;
+  bottom: 20px; /* 원하는 위치로 조절하세요 */
+  left: 20px; /* 원하는 위치로 조절하세요 */
+  width: 60px;
+  height: 60px;
+  border: none;
+  background-color: white;
+  border-radius: 50%;
+  color: #302acd;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+
+.goBackButton:hover {
+  color: #524eb1;
+}
+
+/* 화살표 스타일링 */
+.goBackButton::before {
+  content: "\2192"; /* 화살표 유니코드 */
+ transform: rotate(180deg); /*화살표를 180도 회전시켜 뒤집음 */
+} 
+
+
+
+
+.ulStyle {
+  list-style-type: none; /* 기본 목록 스타일 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+  margin: 0; /* 기본 마진 제거 */
+}
+
+.liStyle {
+  background-color: #f0f0f0; /* 배경색 설정 */
+  margin-bottom: 5px; /* 아래쪽 마진 설정 */
+  padding: 10px; /* 패딩 설정 */
+  border: 1px solid #ddd; /* 테두리 설정 */
+}
+
+
+
+
+
+.resultBoxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  width: 550px;
+}
+
+
+.alignText {
+  text-align: center;
+}
+
+
+.policyLabel {
+  background-color: rgb(255, 249, 198);
+  border-radius: 50%;
+  font-family: 'NanumBarunGothic';
+  font-size: 14px;
+  color: #d0af0b;
+  border-radius: 90px;
+  border-color: #d00b12;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policyLabel2 {
+  background-color: #e6e6fe;
+  border-radius: 50%;
+  font-family: 'NanumBarunGothic';
+  font-size: 14px;
+  color: #1c13c6;
+  border-radius: 90px;
+  border-color: #1c13c6;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policyLabel3 {
+  background-color: #c6ffed;
+  border-radius: 50%;
+  font-family: 'NanumBarunGothic';
+  font-size: 14px;
+  color: #064d29;
+  border-radius: 90px;
+  border-color: #064d29;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policyLabel4 {
+  background-color: rgb(255, 225, 198);
+  border-radius: 50%;
+  font-family: 'NanumBarunGothic';
+  font-size: 14px;
+  color: #d0390b;
+  border-radius: 90px;
+  border-color: #d0390b;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policyLabel5 {
+  background-color: rgb(255, 198, 198);
+  border-radius: 50%;
+  font-family: 'NanumBarunGothic';
+  font-size: 14px;
+  color: #d00b12;
+  border-radius: 90px;
+  border-color: #d00b12;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.pagination {
+  margin-top: 30px;
+}
+
+.pagination-button {
+  font-family: 'Pretendard-Regular';
+  background-color: #FFFF;
+  color: #1c13c6;
+  border: none;
+  padding: 4px 12px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination-button:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.pagination-button.active {
+  background-color: #1c13c6;
+  color: #FFFF;
+}
+
+
+
+.float-start {
+  font-family: 'Pretendard-Regular';
+  font-weight: 600;
+}
+
+
+/* App.css 또는 원하는 파일에 추가할 스타일 */
+/* Add this to your CSS file */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table-cell {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.alignButton {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.infoContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.resultbox1 {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.centeredContainer {
+  padding: 20px;
+}
+
+.table-row {
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-row span {
+  display: block;
+  padding: 10px;
+}
+
+.table-row span.float-start {
+  float: left;
+}
+
+.table-row span.float-end {
+  float: right;
+}
+
+
+.policyInfoTitle{
+  font-family: 'JalnanGothic';
+  font-size: 25px;
+  text-align: center; /* Add this line to center the text horizontally */
+  align-items: center;
+
+  margin-top: 100px;
+}
+
+
+
+.infoColumnTitle{
+  font-weight: 600;
+  font-size: 18px;
+}
+
+table {
+  width: 900px;
+  height: 100px;
+  background-color: none;
+  border-collapse: collapse;
+  border-radius: 10px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #e0e0e0;
+  font-family: 'Pretendard-Regular';
+  margin: auto; /* Center the table */
+
+}
+
+
+td, th {
+  padding: 12px; /* Add padding to table cells */
+}
+
+/* .infoTable td, .infoTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+} */
+
+
+.policyInfoContainer {
+  position: relative;
+}
+
+.policyInfoTitle {
+  text-align: center; /* Center the title */
+}
+
+.floatingButton {
+  position: absolute;
+  top: 20px; /* Adjust distance from the top as needed */
+  right: 20px; /* Adjust distance from the right as needed */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border-radius: 50%; /* Make it circular */
+  padding: 10px; /* Adjust padding as needed */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buttonIcon {
+  font-size: 20px; /* Adjust icon size as needed */
+}
+
+.alignButton {
+  text-align: center; /* Center the "돌아가기" button */
+}
+
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 화면의 100% 높이만큼 커버 */
+  
+}
+
+.custom-button1 {
+  font-family: 'JalnanGothic';
+  width: 300px; /* 버튼의 너비를 조절 */
+  height: 300px; /* 버튼의 높이를 조절 */
+  font-size: 30px; /* 글자 크기를 조절 */
+  border-radius: 50%; /* Make it circular */
+  margin-right: 20px;
+  background-color: #524eb1;
+  border: none;
+  color: white;
+}
+
+.custom-button1:hover{
+  background-color: #313131;
+  
+}
+.custom-button2 {
+  font-family: 'JalnanGothic';
+  font-size: 30px;
+  width: 300px; /* 버튼의 너비를 조절 */
+  height: 300px; /* 버튼의 높이를 조절 */
+  font-size: 30px; /* 글자 크기를 조절 */
+  border-radius: 50%; /* Make it circular */
+  margin-left: 20px;
+  background-color: #79b55d;
+  border: none;
+  color: white;
+
+}
+
+.custom-button2:hover{
+  background-color: #313131;
+  
 }

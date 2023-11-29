@@ -1,23 +1,15 @@
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import Box from '@mui/material/Box';
 export default function NaveBar() {
+  
+
+
   return (
-    <div className="header">
-        <ButtonGroup variant="text" aria-label="text button group">
-          <Link to="/create_item" className="link">
-            <Button>One</Button>
-          </Link>
-
-          <Link to="/create_item" className="link">
-          <Button>Two</Button>
-          </Link>
-
-          <Link to="/" className="link">
-          <Button>Three</Button>
-          </Link>
-        </ButtonGroup>
+    <div className="headerTitle">
+    <span>당신에게 맞는 <span className="highlight">청년</span></span>
+    <br/>
+    <span> <span className="highlight">정책</span>을 추천드립니다</span>
     </div>
   );
 }

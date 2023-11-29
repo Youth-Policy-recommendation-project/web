@@ -1,125 +1,85 @@
-import { Link } from "react-router-dom";
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
+import { Dropdown } from 'bootstrap';
+import { useEffect, useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
+  const history = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  useEffect(() => {
+    // 로그인 여부 확인
+    const accessToken = localStorage.getItem('accessToken');
+    setIsLoggedIn(accessToken !== null);
+  }, []);
+
+  function handleLogout() {
+    fetch("/api/members/logout", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + localStorage.getItem('accessToken'),
+      },
+      body: JSON.stringify({
+        refreshToken: localStorage.getItem('accessToken'),
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        // 로그아웃 성공 시 토큰 및 로그인 상태 업데이트
+        localStorage.removeItem('accessToken'); // 토큰 삭제
+        setIsLoggedIn(false);
+        history("/");
+        window.location.reload();
+      }
+    });
+  }  
+
+  const id = localStorage.getItem('memberId')
+
+  function handleGoMyInfo() {
+    history(`/myinfo/${id}`)
+  }
+
+
+  const name = localStorage.getItem('nickname');
 
   return (
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Container className='header'>
+        <div className='left'>
+          <Navbar.Brand href="/">청년정책</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        </div>
 
-    <div className="header">
-      <h1>
-        <Link to="/">청년정보</Link>
-      </h1>
-      <div className="menu">
-      <React.Fragment>
-      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Tooltip title="Account settings">
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? 'account-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-          >
-            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
-          </IconButton>
-        </Tooltip>
-      </Box>
-      <Menu
-        anchorEl={anchorEl}
-        id="account-menu"
-        open={open}
-        onClose={handleClose}
-        onClick={handleClose}
-        PaperProps={{
-          elevation: 0,
-          sx: {
-            overflow: 'visible',
-            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-            mt: 1.5,
-            '& .MuiAvatar-root': {
-              width: 32,
-              height: 32,
-              ml: -0.5,
-              mr: 1,
-            },
-            '&:before': {
-              content: '""',
-              display: 'block',
-              position: 'absolute',
-              top: 0,
-              right: 14,
-              width: 10,
-              height: 10,
-              bgcolor: 'background.paper',
-              transform: 'translateY(-50%) rotate(45deg)',
-              zIndex: 0,
-            },
-          },
-        }}
-        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-      >
-        <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Add another account
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Logout
-        </MenuItem>
-      </Menu>
-    </React.Fragment>
-
-        {/* <Link to="/create_item" className="link">
-          <button>Add</button>
-        </Link> */}
-      </div>
-    </div>
-
-
-
-
+        <div>
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav>
+              <div className="login-container">
+                {isLoggedIn ? (
+                  <NavDropdown title={`${name}님 반갑습니다!`} id="collapsible-nav-dropdown" className='normalFont'>
+                    <NavDropdown.Item onClick={handleGoMyInfo}>
+                      나의 정보
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">저장된 정책</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item onClick={handleLogout}>
+                      로그아웃
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                ) : (
+                  <div>
+                  <span className="login normalFont" onClick={() => history("/login")}>로그인</span> <span className="normalFont">　|　</span>   
+                  <span className="login normalFont" onClick={() => history("/register")}>회원가입</span>
+                  </div>
+                )}
+              </div>
+            </Nav>
+          </Navbar.Collapse>
+        </div>
+      </Container>
+    </Navbar>
   );
 }
-
-
-

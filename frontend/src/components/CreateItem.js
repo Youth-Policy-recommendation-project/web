@@ -24,7 +24,7 @@ export default function CreateItem() {
     // value state를 서버로 보내기
     const onSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3001/items", {
+        fetch("http://localhost:3001/policy", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",

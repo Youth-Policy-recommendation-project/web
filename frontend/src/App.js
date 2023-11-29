@@ -1,54 +1,46 @@
 import React from "react";
-import Items from "./components/Items";
 import Header from "./components/Header";
-import NaveBar from "./components/NaveBar";
+import MyForm from "./components/MyForm";
 import Result from "./components/Result";
 import CreateItem from "./components/CreateItem";
 // import Item from "./components/Item";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-
+import Login from "./components/Login";
+import PolicyInfo from "./components/PolicyInfo";
+import Register from "./components/Register";
+import MainPage from "./components/MainPage";
+import MyInfo from "./components/MyInfo"
+import { AuthProvider } from "./components/AuthProvider";
+import MemberResult from "./components/MemberResult";
+import Chatbot from "./components/ChatBot";
+import InfoUpdate from "./components/InfoUpdate";
 function App() {
 
  return(
+  <AuthProvider>
   <BrowserRouter>
     <div class="App">
       <Header/>
-      <NaveBar/>
       <Routes>
-        <Route path="/" element={<Items/>}/>
-        <Route path="/todo" element={<Items endpoint="?status=todo"/>}/>
-        <Route path="/done" element={<Items endpoint="?status=done"/>}/>
+
+        <Route path="/" element={<MyForm/>}/>
+        <Route path="/chatbot" element={<Chatbot/>}/>
+        <Route path="/myinfo/:id/update" element={<InfoUpdate/>}/>
+        <Route path="/member" element={<MainPage/>}/>
+        <Route path="/policy/:id" element={<PolicyInfo/>}/>
+        <Route path="/myinfo/:id" element={<MyInfo/>}/>
+        <Route path="/myresult" element={<MemberResult/>} /> 
+        <Route path="/result/:policy/:policySub/:city/:age" element={<Result/>} />
+        <Route path="/register" element={<Register/>}></Route>
         <Route path="/create_item" element={<CreateItem/>}/>
+        <Route path="/login" element={<Login/>}/>
         <Route path="/result" element={<Result/>}/>
 
       </Routes>
     </div>
   </BrowserRouter>
+  </AuthProvider>
  );
 }
 
 export default App;
-
-
-// // import logo from './logo.svg';
-// import './App.css';
-// import Hello from './Hello';
-// import Wrapper from './Wrapper';
-
-// function App() {
-
-//   return (
-//     // <Hello name="indo" />
-//     <Wrapper>
-//       <Hello />
-//       <p>I love React!</p>
-//       <Hello name="react!"/>
-//     </Wrapper> );
-// }
-
-// export default App;
-
-// // 부모 컴포넌트에서 자식 컴포넌트 한 방향으로만 사용된다.
-
-
