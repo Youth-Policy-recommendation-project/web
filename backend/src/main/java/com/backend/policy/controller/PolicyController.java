@@ -1,6 +1,8 @@
 package com.backend.policy.controller;
 
 
+import com.backend.member.domain.Member;
+import com.backend.member.repository.MemberRepository;
 import com.backend.policy.entity.PolicyEntity;
 import com.backend.policy.model.PolicyDTO;
 import com.backend.policy.model.PolicyRequestDTO;
@@ -29,6 +31,9 @@ public class PolicyController {
     private PolicyService policyService;
     @Autowired
     private PolicyRepository policyRepository;
+
+    @Autowired
+    private MemberRepository memberRepository;
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/all")
@@ -102,5 +107,57 @@ public class PolicyController {
     public Optional<PolicyEntity> getPolicyById(@PathVariable int id) {
         return policyRepository.findById(id);
     }
+
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/search/member/{id}")
+    public ResponseEntity<List<PolicyEntity>> searchPoliciesByMember(
+        @PathVariable Long id
+    ) {
+
+        Member member = memberRepository.findById(id).orElseThrow();
+        String hostArea = member.getRegion();
+        String mainCategory = member.getInterestPolicy();
+        int age = member.getAge();
+
+        List<PolicyEntity> policies = policyService.searchPolicyByMemberConditions(hostArea, mainCategory, age);
+
+        return new ResponseEntity(policies, HttpStatus.OK);
+    }
+
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/search/member/{id}/latest")
+    public ResponseEntity<List<PolicyEntity>> searchMemberPoliciesLatest(
+        @PathVariable Long id
+    ) {
+
+        Member member = memberRepository.findById(id).orElseThrow();
+        String hostArea = member.getRegion();
+        String mainCategory = member.getInterestPolicy();
+        int age = member.getAge();
+
+        List<PolicyEntity> policy = policyService.searchPolicyByMemberConditionsDesc(
+            hostArea, mainCategory,age);
+
+        return new ResponseEntity<>(policy, HttpStatus.OK);
+    }
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/search/member/{id}/deadline")
+    public ResponseEntity<List<PolicyEntity>> searchMemberPoliciesDeadline(
+        @PathVariable Long id
+    ) {
+
+        Member member = memberRepository.findById(id).orElseThrow();
+        String hostArea = member.getRegion();
+        String mainCategory = member.getInterestPolicy();
+        int age = member.getAge();
+
+        List<PolicyEntity> policy = policyService.searchPolicyByMemberConditionsAsc(
+            hostArea, mainCategory, age);
+
+        return new ResponseEntity<>(policy, HttpStatus.OK);
+    }
+
 
 }

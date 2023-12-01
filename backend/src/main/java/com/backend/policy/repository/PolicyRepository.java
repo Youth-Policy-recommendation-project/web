@@ -385,5 +385,35 @@ public interface PolicyRepository extends JpaRepository<PolicyEntity, Integer> {
         @Param("age") int age
     );
 
+    @Query("SELECT p FROM policy p " +
+        "WHERE p.hostArea = :hostArea " +
+        "AND p.mainCategory = :mainCategory " +
+        "AND :age BETWEEN p.startAge AND p.endAge ")
+    List<PolicyEntity> findPoliciesByMemberConditions(
+        @Param("hostArea") String hostArea,
+        @Param("mainCategory") String mainCategory,
+        @Param("age") int age
+    );
 
+    @Query("SELECT p FROM policy p " +
+        "WHERE p.hostArea = :hostArea " +
+        "AND p.mainCategory = :mainCategory " +
+        "AND :age BETWEEN p.startAge AND p.endAge " +
+        "ORDER BY p.businessApplyEnd asc")
+    List<PolicyEntity> findPoliciesByMemberConditionsOrderByAsc(
+        @Param("hostArea") String hostArea,
+        @Param("mainCategory") String mainCategory,
+        @Param("age") int age
+    );
+
+    @Query("SELECT p FROM policy p " +
+        "WHERE p.hostArea = :hostArea " +
+        "AND p.mainCategory = :mainCategory " +
+        "AND :age BETWEEN p.startAge AND p.endAge " +
+        "ORDER BY p.businessApplyStart desc ")
+    List<PolicyEntity> findPoliciesByMemberConditionsOrderByDesc(
+        @Param("hostArea") String hostArea,
+        @Param("mainCategory") String mainCategory,
+        @Param("age") int age
+    );
 }

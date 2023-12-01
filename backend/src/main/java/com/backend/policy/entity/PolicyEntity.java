@@ -3,6 +3,7 @@ package com.backend.policy.entity;
 import com.backend.member.domain.Member;
 
 
+import com.backend.member.domain.PolicyBoard;
 import com.backend.policy.model.PolicyDTO;
 import java.sql.Date;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -82,6 +84,9 @@ public class PolicyEntity {
     private int startAge; // 시작 나이
     private int endAge; // 끝 나이
 
+    @ManyToOne
+    @JoinColumn(name = "policy_board_id", insertable = false, updatable = false)
+    private PolicyBoard policyBoard;
 
 //    @ManyToMany(mappedBy = "policies")
 //    private List<Member> users = new ArrayList<>();

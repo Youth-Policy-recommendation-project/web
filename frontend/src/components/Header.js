@@ -43,6 +43,9 @@ export default function Header() {
     history(`/myinfo/${id}`)
   }
 
+  function handleGoMyPolicy() {
+    history(`/mypolicy`)
+  }
 
   const name = localStorage.getItem('nickname');
 
@@ -50,7 +53,7 @@ export default function Header() {
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container className='header'>
         <div className='left'>
-          <Navbar.Brand href="/">청년정책</Navbar.Brand>
+          <Navbar.Brand id="logo" href="/">정책이</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         </div>
 
@@ -63,7 +66,7 @@ export default function Header() {
                     <NavDropdown.Item onClick={handleGoMyInfo}>
                       나의 정보
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">저장된 정책</NavDropdown.Item>
+                    <NavDropdown.Item onClick={handleGoMyPolicy}>저장된 정책</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item onClick={handleLogout}>
                       로그아웃

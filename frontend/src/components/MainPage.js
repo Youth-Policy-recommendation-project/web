@@ -9,6 +9,7 @@ export default function MainPage() {
   useEffect(() => {
     // 로컬 스토리지에서 토큰을 가져옴
     const accessToken = localStorage.getItem('accessToken');
+    const id = localStorage.getItem('memberId');
 
     // 토큰이 존재하면 로그인 상태로 간주
     if (!accessToken) {
@@ -35,6 +36,7 @@ export default function MainPage() {
       <button variant="secondary" onClick={handleSearchClick} className="custom-button2">
         검색해서보기
       </button>
+
     </div>
   );
 }

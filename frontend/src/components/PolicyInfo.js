@@ -53,7 +53,7 @@ export default function PolicyInfo() {
                 <TableRow title="지원내용" value={data.policyContent} />
                 <TableRow title="지원규모" value={data.policyScale} />
                 <TableRow title="사업운영 기간" value={`${data.operationStartDate} ~ ${data.operationEndDate}`} />
-                <TableRow title="신청 기간" value={`${data.BusinessApplyStart} ~ ${data.BusinessApplyEnd}`} />
+                <TableRow title="신청 기간" value={`${data.businessApplyStart} ~ ${data.businessApplyEnd}`} />
                 <TableRow title="나이" value={`${data.startAge} ~ ${data.endAge}`} />
                 <TableRow title="전공요건" value={data.majorRequirements} />
                 <TableRow title="취업상태" value={data.employmentStatusDetails} />
@@ -72,8 +72,8 @@ export default function PolicyInfo() {
                 <TableRow title="주관부처 담당자 연락처" value={data.hostingDepartmentContact} />
                 <TableRow title="운영기관 담당자" value={data.hostingDepartmentContact} />
                 <TableRow title="운영기관 담당자 연락처" value={data.operatingOrganization} />
-                <TableRow title="기타사항" value={data.operatingAgency} />
-                <TableRow title="주관지역" value={data.operatingAgencyContact} />
+                <TableRow title="기타사항" value={data.etc} />
+                <TableRow title="주관지역" value={data.hostArea} />
               </tbody>
             </table>
 

@@ -28,7 +28,7 @@ public class PolicyService {
     public List<PolicyEntity> searchPolicyByConditions(String hostArea, String mainCategory,
         String segCategory, String age) {
 
-        List<PolicyEntity> policyList = new ArrayList<>(); // Initialize to an empty list
+        List<PolicyEntity> policyList; // Initialize to an empty list
         int intAge = Integer.parseInt(age);
 
             if ("n".equals(hostArea) && "n".equals(mainCategory) && intAge == -1) {
@@ -224,5 +224,20 @@ public class PolicyService {
     }
 
 
+    public List<PolicyEntity> searchPolicyByMemberConditions(String hostArea, String mainCategory, int age) {
+        List<PolicyEntity> policyList = policyRepository.findPoliciesByMemberConditions(hostArea, mainCategory, age); // Initialize to an empty list
+        return new ArrayList<>(policyList);
+    }
+
+    public List<PolicyEntity> searchPolicyByMemberConditionsAsc(String hostArea, String mainCategory, int age) {
+        List<PolicyEntity> policyList = policyRepository.findPoliciesByMemberConditionsOrderByAsc(hostArea, mainCategory, age); // Initialize to an empty list
+        // Null check for policyRepository before calling methods
+        return new ArrayList<>(policyList);
+    }
+    public List<PolicyEntity> searchPolicyByMemberConditionsDesc(String hostArea, String mainCategory, int age) {
+        List<PolicyEntity> policyList = policyRepository.findPoliciesByMemberConditionsOrderByDesc(hostArea, mainCategory, age); // Initialize to an empty list
+        // Null check for policyRepository before calling methods
+        return new ArrayList<>(policyList);
+    }
 
 }

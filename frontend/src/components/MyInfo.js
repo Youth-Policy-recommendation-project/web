@@ -63,13 +63,11 @@ console.log(data);
   return (
     <div className="loginPage">
       <div className="alignInput">
-        <div className="titleWrap"> 나의 정보 수정</div>
+        <div className="titleWrap"> 나의 정보</div>
 
         <div className="contentWrap">
           <div className="inputTitle">이름</div>
-          <div className="inputWrap">
             <p className="input"> {name}</p>
-          </div>
 
           <div className="inputTitle">이메일 주소</div>
           <p className="inputWrap">
@@ -82,27 +80,29 @@ console.log(data);
           </div>
 
           <div className="inputTitle">지역</div>
-          <div className="inputWrap">
-
+          <div className="inputWrap">    
           <p className="input"> {region} </p>
+          </div>
 
 
           <div className="inputTitle">관심 정책</div>
           <div className="inputWrap">
-
           <p className="input"> {interestPolicy} </p>
           </div>
-          </div>
+
         </div>
       </div>
-
+    
+      <svg onClick={() => history('/member')} type="button" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill goBackButton" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+          </svg>
+    
       <div className="alignButton">
         <button className="mainButton" onClick={() => history(`/myinfo/${id}/update`)}>
           수정하기
         </button>
       </div>
 
-      <button onClick={() => history(`/`)} className="goBackButton" type="button"></button>
     </div>
   );
 }

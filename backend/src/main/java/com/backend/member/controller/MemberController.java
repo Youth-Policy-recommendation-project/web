@@ -5,7 +5,7 @@ package com.backend.member.controller;
 
 import com.backend.member.domain.Member;
 import com.backend.member.domain.RefreshToken;
-import com.backend.member.domain.Role;
+//import com.backend.member.domain.Role;
 import com.backend.member.dto.MemberInfoRequestDto;
 import com.backend.member.dto.MemberInfoResponseDto;
 import com.backend.member.dto.MemberLoginDto;
@@ -74,7 +74,7 @@ public class MemberController {
             Member savedMember = savedMemberOptional.get();
 
             MemberSignupResponseDto memberSignupResponse = new MemberSignupResponseDto();
-            memberSignupResponse.setMemberId(savedMember.getMemberId());
+            memberSignupResponse.setId(savedMember.getId());
             memberSignupResponse.setName(savedMember.getName());
             memberSignupResponse.setRegdate(savedMember.getRegdate());
             memberSignupResponse.setEmail(savedMember.getEmail());
@@ -108,7 +108,7 @@ public class MemberController {
         // JWT토큰을 생성하였다. jwt라이브러리를 이용하여 생성.
 //        String accessToken = jwtTokenizer.createAccessToken(member.getMemberId(), member.getEmail(), roles);
 //        String refreshToken = jwtTokenizer.createRefreshToken(member.getMemberId(), member.getEmail(), roles);
-        String accessToken = jwtTokenizer.createAccessToken(member.getMemberId(), member.getEmail());
+        String accessToken = jwtTokenizer.createAccessToken(member.getId(), member.getEmail());
 
 //        RefreshToken refreshTokenEntity = new RefreshToken();
 //        refreshTokenEntity.setValue(refreshToken);
@@ -117,7 +117,7 @@ public class MemberController {
 
         MemberLoginResponseDto loginResponse = MemberLoginResponseDto.builder()
                 .accessToken(accessToken)
-                .memberId(member.getMemberId())
+                .id(member.getId())
                 .nickname(member.getName())
                 .build();
         return new ResponseEntity(loginResponse, HttpStatus.OK);
@@ -152,7 +152,7 @@ public class MemberController {
         MemberLoginResponseDto loginResponse = MemberLoginResponseDto.builder()
                 .accessToken(accessToken)
                 .refreshToken(refreshTokenDto.getRefreshToken())
-                .memberId(member.getMemberId())
+                .id(member.getId())
                 .nickname(member.getName())
                 .build();
         return new ResponseEntity(loginResponse, HttpStatus.OK);
@@ -197,5 +197,11 @@ public class MemberController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
+
+
+//    @GetMapping("/")
+//    public ResponseEntity<String> memberBoard(@PathVariable Long memberId) {
+//
+//    }
 
 }

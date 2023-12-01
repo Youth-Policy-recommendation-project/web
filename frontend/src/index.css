@@ -1,4 +1,28 @@
 
+/* 한컴 울주 천전리 각석체 */
+@font-face {
+  font-family: 'HancomUljuCheonjeonri';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205-2@1.0/HancomUljuCheonjeonri.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}  
+/* 자이언츠체 */
+@font-face {
+  font-family: 'Giants-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* 여름물빛체 */
+@font-face {
+  font-family: 'HSSummer';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSSummer.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 @font-face {
   font-family: 'Pretendard-Regular';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
@@ -63,8 +87,6 @@
 
 
 .header {
-  font-family: 'JalnanGothic';
- 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,6 +94,15 @@
   width: 1200px;
 }
 
+
+#logo{
+ font-family: 'JalnanGothic';
+ /* font-family: 'Giants-Bold'; */
+ 
+  /* font-family: 'HancomUljuCheonjeonri'; */
+  /* font-family: 'HSSummer'; */
+ font-size: 40px;
+}
 .left {
   margin-right: auto;
 }
@@ -252,7 +283,7 @@ table td:first-child {
 .titleWrap {
   font-family: 'LINESeedKR-Bd';
 
-  margin-top: 87px;
+  margin-top: 70px;
   font-size: 26px;
   font-weight: 700;
   color: #262626;
@@ -275,7 +306,6 @@ table td:first-child {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 33px;
 }
 
 
@@ -334,6 +364,7 @@ table td:first-child {
   justify-content: center; /* 수평 가운데 정렬 */
   align-items: center; /* 수직 가운데 정렬 */
   text-align: center;
+  padding: 8px;
 }
 
 .policyClick:hover{
@@ -351,6 +382,10 @@ table td:first-child {
   height: 100%; /* 부모 요소의 높이를 100%로 설정하여 수직 가운데 정렬을 적용합니다. */
 }
 
+
+.modal-body{
+  height: 800px;
+}
 
 .titleFont {
   font-family: 'LINESeedKR-Bd';
@@ -407,6 +442,21 @@ table td:first-child {
   font-family: 'Pretendard-Regular';
 }
 
+.chatCloseButton  {
+  font-family: 'Pretendard-Regular';
+  background-color: #453de1;
+  border: none;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  height: 48px;
+}
+  .iframe-container {
+    overflow: hidden;
+    height: 80vh; /* 조절 가능한 높이 */
+  }
+
 .alignButton {
   display: flex;
   flex-direction: column;
@@ -426,16 +476,45 @@ table td:first-child {
   cursor: pointer;
 }
 
-
-
 .mainButton:hover{
   background-color: white;
   color: #1c13c6;
   border: 1px solid #1c13c6; /* 테두리 설정 */
-
 }
 
+.chatFloat {
+  position: fixed;
+  bottom: 20px; /* 원하는 위치로 조절하세요 */
+  right: 20px; /* 원하는 위치로 조절하세요 */
+  width: 150px;
+  height: 150px;
+  border: 5px solid #302acd;
+  background-color: white;
+  border-radius: 50%;
+  color: #302acd;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
 
+.chatFloat:hover {
+  border: 5px solid white;
+  background-color: #302acd;
+  color: white;
+  
+}
+
+/* 숨기기 */
+.hidden {
+  display: hidden;
+}
+
+.withScreencast {
+  height: 900px;
+}
 .goBackButton {
   position: fixed;
   bottom: 20px; /* 원하는 위치로 조절하세요 */
@@ -472,6 +551,8 @@ table td:first-child {
   list-style-type: none; /* 기본 목록 스타일 제거 */
   padding: 0; /* 기본 패딩 제거 */
   margin: 0; /* 기본 마진 제거 */
+  margin-top: 30px;
+
 }
 
 .liStyle {
@@ -483,7 +564,7 @@ table td:first-child {
 
 
 
-
+/* 
 
 .resultBoxContainer {
   display: flex;
@@ -491,82 +572,205 @@ table td:first-child {
   justify-content: center;
   margin-top: 30px;
   width: 550px;
-}
+} */
 
 
 .alignText {
   text-align: center;
 }
 
+/* 추가된 스타일 */
+#container {
+  width: 1000px;
+  height: 70px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.policyLabel {
-  background-color: rgb(255, 249, 198);
-  border-radius: 50%;
+#leftContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+#rightContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#leftContainer div,
+#rightContainer div {
+  display: flex;
+  flex-direction: column;
+}
+
+#policyName{
+  align-items: flex-start; /* 수정: 왼쪽 정렬 */
+  padding: 15px;  
+}
+
+#policyName:hover {
+  padding: 15px;
+  background-color: #aaa;
+  border-radius: 9px;
+  height: 30px;
+}
+
+#container div {
+  height: 80px;
+  /* border: 2px solid aqua; */
+  /* background: orange; */
+  margin-right: 5px;
+  justify-content: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 나머지 스타일은 동일 */
+
+/* 추가된 스타일 */
+#container {
+  width: 800px;
+  height: 30px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#leftContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+#rightContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#leftContainer div,
+#rightContainer div {
+  display: flex;
+  flex-direction: column;
+}
+
+#policyName{
+  align-items: flex-start; /* 수정: 왼쪽 정렬 */
+  padding: 15px;  
+  font-size: 18px;
+
+}
+
+#policyName:hover {
+  padding: 15px;
+  background-color: rgba(224, 224, 224, 0.62);
+  border-radius: 9px;
+  height: 30px;
+  font-weight: 700;
+  font-size: 18px;
+
+}
+
+#container div {
+  height: 20px;
+  margin-right: 5px;
+  justify-content: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 나머지 스타일은 동일 */
+#policyLabel {
+
+  background-color: #fafee6;
+  color: #c6ae13;
+  border-color: #c6ae13;
+
+
+  padding: 15px;
+  width: 90px;
+  border-radius: 90px;
+  height: 30px;
   font-family: 'NanumBarunGothic';
   font-size: 14px;
-  color: #d0af0b;
-  border-radius: 90px;
-  border-color: #d00b12;
-  width: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.policyLabel2 {
+
+#policyLabel2 {
   background-color: #e6e6fe;
-  border-radius: 50%;
-  font-family: 'NanumBarunGothic';
-  font-size: 14px;
   color: #1c13c6;
-  border-radius: 90px;
   border-color: #1c13c6;
-  width: 80px;
+
+  padding: 15px;
+  width: 90px;
+  border-radius: 90px;
+  height: 30px;
+  font-family: 'NanumBarunGothic';
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.policyLabel3 {
+#policyLabel3 {
   background-color: #c6ffed;
-  border-radius: 50%;
-  font-family: 'NanumBarunGothic';
-  font-size: 14px;
   color: #064d29;
-  border-radius: 90px;
   border-color: #064d29;
-  width: 80px;
+
+  padding: 15px;
+  width: 90px;
+  border-radius: 90px;
+  height: 30px;
+  font-family: 'NanumBarunGothic';
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.policyLabel4 {
+#policyLabel4 {
   background-color: rgb(255, 225, 198);
-  border-radius: 50%;
+  color: #d0390b;
+  border-color: #d0390b;
+
+  padding: 15px;
+  width: 90px;
+  border-radius: 90px;
+  height: 30px;
   font-family: 'NanumBarunGothic';
   font-size: 14px;
-  color: #d0390b;
-  border-radius: 90px;
-  border-color: #d0390b;
-  width: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.policyLabel5 {
+#policyLabel5 {
   background-color: rgb(255, 198, 198);
-  border-radius: 50%;
+  color: #d00b12;
+  border-color: #d00b12;
+
+  padding: 15px;
+  width: 90px;
+  border-radius: 90px;
+  height: 30px;
   font-family: 'NanumBarunGothic';
   font-size: 14px;
-  color: #d00b12;
-  border-radius: 90px;
-  border-color: #d00b12;
-  width: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 
@@ -770,4 +974,25 @@ td, th {
 .custom-button2:hover{
   background-color: #313131;
   
+}
+
+
+
+.icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.icon-text img {
+  margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 조절 */
+}
+
+.icon-text p {
+  margin: 0; /* 문구의 위아래 여백 제거 */
+}
+
+
+
+#footer{
+  margin-bottom: 100px;
 }

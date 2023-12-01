@@ -3,6 +3,7 @@ package com.backend.member.domain;
 
 
 import java.time.LocalDate;
+import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,9 +22,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Getter
 public class Member {
     @Id // 이 필드가 Table의 PK.
-    @Column(name="member_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY) // userId는 자동으로 생성되도록 한다. 1,2,3,4
-    private Long memberId;
+    private Long id;
 
     @Column(length = 255)
     private String email;
@@ -46,18 +46,14 @@ public class Member {
     private LocalDateTime regdate;
 
 
+    @OneToOne(mappedBy = "member", cascade = CascadeType.ALL)
+    private PolicyBoard policyBoard;
 
-//    @ManyToMany
-//    @JoinTable(name = "member_role",
-//            joinColumns = @JoinColumn(name = "member_id"),
-//            inverseJoinColumns = @JoinColumn(name = "role_id")
-//    )
-//    private Set<Role> roles = new HashSet<>();
 
     @Override
     public String toString() {
         return "User{" +
-                "memberId=" + memberId +
+                "id=" + id +
                 ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +

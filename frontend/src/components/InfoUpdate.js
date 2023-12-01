@@ -75,7 +75,8 @@ export default function InfoUpdate() {
           email,
           name,
           dateOfBirth: birthdate,
-          region,
+          region : region,
+          interestPolicy : interestPolicy
         }),
       });
 
@@ -113,8 +114,7 @@ export default function InfoUpdate() {
           <div className="inputTitle">지역</div>
       <div className="inputWrap">
         <select
-          className="form-select formFont"
-          aria-label="Default select example"
+          className="form-select formFont input"
           value={region}
           onChange={(e) => setRegion(e.target.value)} 
         >
@@ -144,11 +144,11 @@ export default function InfoUpdate() {
           <div className="inputTitle">관심 정책</div>
           <div className="inputWrap">
 
-          <select className="form-select formFont" 
-              aria-label="Default select example"  
-              defaultValue="선택" ref={interestPolicyRef} 
+          <select className="form-select formFont input" 
+              defaultValue="선택" 
+              ref={interestPolicyRef} 
               value={interestPolicy}
-              onChange={(e) => setInterestPolicy(e.target.value)} 
+              onChange={handlePolicyChange} 
                 >
               <option disabled>선택</option>
               <option>일자리</option>
@@ -162,14 +162,16 @@ export default function InfoUpdate() {
           </div>
         </div>
       </div>
-
+    
       <div className="alignButton">
         <button className="mainButton" onClick={handleUpdate}>
           확인
         </button>
       </div>
 
-      <button onClick={() => navigate('/')} className="goBackButton" type="button"></button>
+      <svg onClick={() => navigate('/')} type="button" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill goBackButton" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+          </svg>
     </div>
   );
 }

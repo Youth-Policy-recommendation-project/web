@@ -4,7 +4,7 @@ package com.backend.member.service;
 
 import com.backend.member.domain.Member;
 import com.backend.member.repository.MemberRepository;
-import com.backend.member.repository.RoleRepository;
+//import com.backend.member.repository.RoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +16,7 @@ import java.util.Optional;
 public class MemberService {
 
     private final MemberRepository memberRepository;
-    private final RoleRepository roleRepository;
+//    private final RoleRepository roleRepository;
 
     @Transactional(readOnly = true)
     public Member findByEmail(String email) {
