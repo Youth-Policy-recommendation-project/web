@@ -1,5 +1,5 @@
 # 정책이 : 사용자 기반 청년 정책 추천 서비스
-https://youthpolicy.vercel.app
+https://youthpolicy.vercel.app <br>
 ![image](https://github.com/Youth-Policy-recommendation-project/.github/assets/116700717/6b2dc509-eb6d-48d2-aafc-2ba2ec73352c)
 
 # About
